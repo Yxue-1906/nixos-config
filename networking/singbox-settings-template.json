@@ -115,6 +115,13 @@
           ".goa-daemon-wrapped"
         ],
         "outbound": "proxy"
+      },
+      {
+	"process_name": [
+	  "git-remote-http"
+	],
+        "rule_set": "geosite-github",
+	"outbound": "proxy"
       }
     ],
     "rule_set": [
@@ -123,6 +130,13 @@
         "tag": "geosite-cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
+        "download_detour": "auto"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-github",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-github.srs",
         "download_detour": "auto"
       }
     ],

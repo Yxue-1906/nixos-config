@@ -33,6 +33,7 @@
     git-crypt
     home-manager
     jetbrains.clion
+    python3Full
     jetbrains.pycharm-professional
   ];
 }

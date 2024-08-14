@@ -36,7 +36,7 @@
 		   }
 		   {
 		     path = [ "experimental" "clash_api" ];
-		     update = old: old // { secret = secrets.sing-box.clash_api.secret; };
+		     update = old: old // { secret = secrets.sing-box.clash-api-secret; };
 		   }
 		 ] template;
   };
