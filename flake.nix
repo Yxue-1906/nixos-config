@@ -16,6 +16,7 @@
           modules = [
             ./networking
             ./applications
+	    ./filesystem
             ./user
             ./basic-conf.nix
           ];
