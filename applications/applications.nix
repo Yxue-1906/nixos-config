@@ -18,6 +18,7 @@
     gnome-terminal.enable = true;
     nano.enable = false;
     tmux.enable = true;
+    wireshark.enable = true;
   };
 
   nixpkgs.config.allowUnfree = true;
