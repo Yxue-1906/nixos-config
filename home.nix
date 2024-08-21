@@ -121,7 +121,7 @@
       source = config.lib.file.mkOutOfStoreSymlink /var/lib/aria2/Downloads;
     };
     ".ssh/id_ed25519" = {
-      source = ./secrets/ssh-secret-key;
+      source = ./secrets/id_ed25519;
     };
 
     # # You can also set the file content immediately.
