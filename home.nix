@@ -153,4 +153,16 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.direnv = {
+   enable = true;
+   enableBashIntegration = true;
+   nix-direnv.enable = true;
+  };
+  programs.bash.enable = true;
+  programs.git = {
+    enable = true;
+    userEmail = "na@na.shi";
+    userName = "nanashi";
+  };
 }
