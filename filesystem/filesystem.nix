@@ -1,6 +1,6 @@
 { ... }: 
 let 
-  default-options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+  default-options = [ "nosuid" "nodev" "nofail" "umask=000" "x-gvfs-show" ];
 in
 {
   fileSystems."/mnt/工作" = {
