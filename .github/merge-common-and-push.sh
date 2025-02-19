@@ -7,10 +7,11 @@ git config --local user.name "GitHub Action"
 git remote add github https://github-action:$GITHUB_TOKEN@github.com/Yxue-1906/nixos-config.git
 
 fmt='
-	git checkout %(refname:lstrip=3)
+	git checkout -f %(refname:lstrip=3)
 	git restore --source=origin/common --worktree .
 	git add --all -- :\!basic-config/hardware.nix :\!.gitignore :\!.github
-	git commit -m "update: merge common config"
+	# prevent nothing to commit resulting git commit exit with non-zero
+	git commit -m "update: merge common config" || true
 	git push github %(refname:lstrip=3)
 '
 
