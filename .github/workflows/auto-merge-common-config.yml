@@ -9,13 +9,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Test echo output
+        run: echo 123
         
       - name: Run script
-        run: bash .github/merge-common-and-push.sh 2>&1 > bash-log.log
+        run: bash .github/merge-common-and-push.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Upload log
-        uses: actions/upload-artifact@v4
-        with:
-          path: bash-log.log
