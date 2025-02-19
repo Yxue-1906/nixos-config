@@ -11,6 +11,11 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Run script
-        run: .github/merge-common-and-push.sh
+        run: bash .github/merge-common-and-push.sh 2>&1 > bash-log.log
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload log
+        use: actions/upload-artifact@v4
+        with:
+          path: bash-log.log
