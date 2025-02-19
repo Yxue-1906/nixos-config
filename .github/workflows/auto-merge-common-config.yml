@@ -9,12 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
-      - name: Run command
-        run: |-
-          git for-each-ref --shell --format="%(refname)" --exclude=refs/remotes/origin/common --exclude=refs/remotes/origin/HEAD refs/remotes/origin/*
         
       - name: Run script
-        run: bash .github/merge-common-and-push.sh
+        run: .github/merge-common-and-push.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
