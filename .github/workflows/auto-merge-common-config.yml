@@ -1,0 +1,16 @@
+name: auto-merge-common-config.yml
+on:
+  push:
+    branches: [ common ]
+
+jobs:
+  merge-common-config:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: action/checkout@v4
+        
+      - name: Run script
+        run: bash .github/merge-common-and-push.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
