@@ -5,10 +5,10 @@ on:
 
 jobs:
   merge-common-config:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Run script
         run: bash .github/merge-common-and-push.sh 2>&1 > bash-log.log
