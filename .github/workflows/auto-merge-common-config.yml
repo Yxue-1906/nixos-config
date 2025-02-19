@@ -16,6 +16,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload log
-        use: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           path: bash-log.log
