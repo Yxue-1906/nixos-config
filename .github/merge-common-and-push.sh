@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
-git config --local user.email "github-action@users.noreply.github.com"
-git config --local user.name "GitHub Action"
 git remote add github https://github-action:$GITHUB_TOKEN@github.com/Yxue-1906/nixos-config.git
+
 fmt='
      git checkout %(refname:lstrip=3)
      git restore --source=origin/common --worktree .
