@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 git config --local user.email "github-action@users.noreply.github.com"
 git config --local user.name "GitHub Action"
