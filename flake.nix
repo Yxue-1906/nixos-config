@@ -9,19 +9,18 @@
   outputs = { self, nixpkgs, nixpkgs-22_11, nixpkgs-24_11, nixpkgs-unstable, ... }@inputs: 
     with nixpkgs.lib; 
     {
-      nixosConfigurations = genAttrs [ "unrelated-desktop" "unrelated-laptop" ] 
-        (hostname: nixosSystem {
-          specialArgs = {
-            secrets = import ./secrets/secrets.nix;
-            inherit hostname nixpkgs nixpkgs-22_11 nixpkgs-24_11 nixpkgs-unstable;
-          };
-          modules = [
-            ./networking
-            ./applications
-	    ./filesystem
-            ./user
-            ./basic-config
-          ];
-      });
+      nixosConfigurations."unrelated" = nixosSystem {
+        specialArgs = {
+          secrets = import ./secrets/secrets.nix;
+          inherit nixpkgs nixpkgs-22_11 nixpkgs-24_11 nixpkgs-unstable;
+        };
+        modules = [
+          ./networking
+          ./applications
+	  ./filesystem
+          ./profile
+          ./basic-config
+        ];
+      };
     };
 }

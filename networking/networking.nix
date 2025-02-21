@@ -1,6 +1,6 @@
-{ pkgs, config, nixpkgs-24_11, nixpkgs-unstable, lib, hostname, secrets, ...}: {
+{ pkgs, config, nixpkgs-24_11, nixpkgs-unstable, lib, secrets, ...}: {
 
-  networking.hostName = hostname; # Define your hostname.
+  networking.hostName = "unrelated";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
