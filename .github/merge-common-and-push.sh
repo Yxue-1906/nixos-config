@@ -9,7 +9,7 @@ git remote add github https://github-action:$GITHUB_TOKEN@github.com/Yxue-1906/n
 fmt='
 	git checkout -f %(refname:lstrip=3)
 	git restore --source=origin/common --worktree .
-	git add --all -- :\!basic-config/hardware.nix :\!.gitignore :\!.github
+	git add --all -- :\!profile :\!.gitignore :\!.github
 	# prevent nothing to commit resulting git commit exit with non-zero
 	git commit -m "update: merge common config" || true
 	git push github %(refname:lstrip=3)
