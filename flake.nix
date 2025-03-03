@@ -2,15 +2,20 @@
   description = "Nanashi's flake.nix";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/24a2206ec1be5ecb32acf8ab089333eb75d7c4b1";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/9df5ff73a8887edc8fb69a9facf3b7f6e8ed17d7";
   };
   outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: 
     with nixpkgs.lib; 
     {
-      nixosConfigurations."unrelated" = nixosSystem {
+      nixosConfigurations."unrelated" = nixosSystem rec {
+	# now set system manually is work around, find if can use nixpkgs.hostPlatform
+	system = "x86_64-linux";
         specialArgs = {
           secrets = import ./secrets/secrets.nix;
-          inherit nixpkgs nixpkgs-unstable;
+          unstable-pkgs = import nixpkgs-unstable {
+	    inherit system;
+	    config.allowUnfree = true;
+	  };
         };
         modules = [
           ./networking
