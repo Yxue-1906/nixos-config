@@ -1,13 +1,4 @@
-{lib, config, options, nixpkgs-24_11, secrets, ...}: 
-{
-  
-  disabledModules = [
-    "services/networking/aria2.nix"
-  ];
-  imports = [
-    "${nixpkgs-24_11}/nixos/modules/services/networking/aria2.nix"
-  ];
-
+{lib, config, options, nixpkgs-24_11, secrets, ...}: {
   services.aria2 = {
     enable = true;
     rpcSecretFile = secrets.aria2.secret-file;

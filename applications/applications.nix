@@ -1,4 +1,4 @@
-{ pkgs, nixpkgs-22_11, config, lib, ...}: {
+{ pkgs, config, lib, ...}: {
   imports = [
     ./aria2.nix
     ./IDEs.nix
@@ -14,7 +14,6 @@
     };
     file-roller = {
       enable = true;
-      package = ( import nixpkgs-22_11 { inherit (pkgs) system; } ).gnome.file-roller;
     };
     nix-ld = {
       enable = true;
