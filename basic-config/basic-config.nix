@@ -25,7 +25,8 @@
       LC_TIME = "zh_CN.UTF-8";
     };
     inputMethod = {
-      enabled = "fcitx5";
+      enable = true;
+      type = "fcitx5";
       fcitx5.waylandFrontend = true;
       fcitx5.addons = with pkgs; [
         fcitx5-gtk
@@ -40,7 +41,7 @@
     enableDefaultPackages = true;
     packages = with pkgs; [
       noto-fonts
-      noto-fonts-cjk
+      noto-fonts-cjk-sans
       noto-fonts-emoji
       ubuntu_font_family
     ];
@@ -64,7 +65,7 @@
     };
     desktopManager.gnome = {
       enable = true;
-      extraGSettingsOverridePackages = [ pkgs.gnome.mutter ];
+      extraGSettingsOverridePackages = [ pkgs.mutter ];
       extraGSettingsOverrides = ''
         [org.gnome.mutter]
         experimental-features=['scale-monitor-framebuffer']
@@ -94,7 +95,6 @@
   # Enable sound.
   # hardware.pulseaudio.enable = true;
   # OR
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {

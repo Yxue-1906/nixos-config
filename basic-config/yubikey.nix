@@ -9,7 +9,7 @@
     #
     # And it should be override the package it self, the module is not configurable for the package. https://github.com/NixOS/nixpkgs/blob/nixos-24.11/nixos/modules/services/desktops/gnome/gnome-keyring.nix
     (final: prev: {
-      gnome-keyring = prev.gnome-keying.overrideAttrs (
+      gnome-keyring = prev.gnome-keyring.overrideAttrs (
         finalAttrs: prevAttrs: {
 	  configureFlags = final.lib.lists.remove "--enable-ssh-agent" prevAttrs.configureFlags;
 	}

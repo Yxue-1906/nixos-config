@@ -1,4 +1,4 @@
-{ pkgs, config, nixpkgs-unstable, lib, secrets, ...}: {
+{ pkgs, config, unstable-pkgs, lib, secrets, ...}: {
 
   networking.hostName = "unrelated";
   # Pick only one of the below networking options.
@@ -17,6 +17,7 @@
 
   services.sing-box = {
     enable = true;
+    package = unstable-pkgs.sing-box;
   };
 
 } 
