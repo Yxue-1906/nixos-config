@@ -20,7 +20,10 @@ in
   # };
 
   # Enable udisks, allow mount internal disks without authentication
-  services.udisks2.enable = true;
+  services.udisks2 = {
+    enable = true;
+    mountOnMedia = true;
+  };
   security.polkit = {
     enable = true;
     # Allow user in group wheel mount drives without authentication
