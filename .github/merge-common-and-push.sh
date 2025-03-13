@@ -15,6 +15,6 @@ fmt='
 	git push github %(refname:lstrip=3)
 '
 
-eval=`git for-each-ref --shell --format="$fmt" --exclude=refs/remotes/origin/common --exclude=refs/remotes/origin/HEAD refs/remotes/origin/*`
+eval=`git for-each-ref --shell --format="$fmt" --exclude=refs/remotes/origin/fix-* --exclude=refs/remotes/origin/feat-* --exclude=refs/remotes/origin/common --exclude=refs/remotes/origin/HEAD refs/remotes/origin/*`
 
 eval "$eval"
