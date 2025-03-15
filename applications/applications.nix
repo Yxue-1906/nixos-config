@@ -32,6 +32,8 @@
     git-crypt
     home-manager
     _7zz
+    # make file-roller happy
+    rar
     zotero
   ];
 }
