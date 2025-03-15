@@ -18,11 +18,12 @@ fmt='
 # replace `...` with $(...)
 # see https://mywiki.wooledge.org/BashFAQ/082
 eval=$(git for-each-ref --shell --format="$fmt"\
-
+\
 	--exclude=refs/remotes/origin/fix-*\
 	--exclude=refs/remotes/origin/feat-*\
 	--exclude=refs/remotes/origin/bump-*\
-
+	--exclude=refs/remotes/origin/revert-*\
+\
 	--exclude=refs/remotes/origin/common\
 	--exclude=refs/remotes/origin/HEAD\
 	refs/remotes/origin/*)
