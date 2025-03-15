@@ -416,7 +416,10 @@
       
       ## BitTorrent trackers ##
       bt-tracker = "";
-      
     };
+  };
+
+  systemd.services.aria2.serviceConfig = {
+    UMask = "0002";
   };
 }
