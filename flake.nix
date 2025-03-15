@@ -1,5 +1,11 @@
 {
   description = "Nanashi's flake.nix";
+  nixConfig = {
+    substituters = [ 
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      "https://cache.nixos.org"
+    ];
+  };
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/9df5ff73a8887edc8fb69a9facf3b7f6e8ed17d7";
