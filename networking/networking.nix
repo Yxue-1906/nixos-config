@@ -1,4 +1,4 @@
-{ pkgs, config, unstable-pkgs, lib, secrets, ...}: {
+{ self, pkgs, config, lib, secrets, ...}: {
 
   networking.hostName = "unrelated";
   # Pick only one of the below networking options.
@@ -15,9 +15,13 @@
   '';
   systemd.services.sing-box.overrideStrategy = "asDropin";
 
-  services.sing-box = {
-    enable = true;
-    package = unstable-pkgs.sing-box;
-  };
+  services.sing-box = 
+    let
+      unstable-pkgs = (import self.inputs.nixpkgs-unstable { inherit (pkgs) system config; });
+    in
+    {
+      enable = true;
+      package = unstable-pkgs.sing-box;
+    };
 
 } 
