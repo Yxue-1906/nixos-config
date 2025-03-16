@@ -15,9 +15,6 @@
     file-roller = {
       enable = true;
     };
-    nix-ld = {
-      enable = true;
-    };
     tmux.enable = true;
   };
 
