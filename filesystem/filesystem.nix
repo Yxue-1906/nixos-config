@@ -1,8 +1,4 @@
-{ ... }: 
-let 
-  default-options = [ "nosuid" "nodev" "nofail" "umask=000" "x-gvfs-show" ];
-in
-{
+{ ... }: {
   # fileSystems."/mnt/工作" = {
   #   device = "/dev/disk/by-label/工作";
   #   fsType = "ntfs3";
@@ -24,6 +20,13 @@ in
     enable = true;
     mountOnMedia = true;
   };
+
+  # fix GH-23
+  # see: https://storaged.org/doc/udisks2-api/latest/mount_options.html
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEMS=="usb", ENV{UDISKS_MOUNT_OPTIONS_DEFAULTS}+="sync"
+  '';
+
   security.polkit = {
     enable = true;
     # Allow user in group wheel mount drives without authentication
