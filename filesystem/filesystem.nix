@@ -1,30 +1,17 @@
 { ... }: {
-  # fileSystems."/mnt/工作" = {
-  #   device = "/dev/disk/by-label/工作";
-  #   fsType = "ntfs3";
-  #   options = default-options;
-  # };
-  # fileSystems."/mnt/应用" = {
-  #   device = "/dev/disk/by-label/应用";
-  #   fsType = "ntfs3";
-  #   options = default-options;
-  # };
-  # fileSystems."/mnt/娱乐" = {
-  #   device = "/dev/disk/by-label/娱乐";
-  #   fsType = "ntfs3";
-  #   options = default-options;
-  # };
-
   # Enable udisks, allow mount internal disks without authentication
   services.udisks2 = {
     enable = true;
     mountOnMedia = true;
   };
 
-  # fix GH-23
-  # see: https://storaged.org/doc/udisks2-api/latest/mount_options.html
   services.udev.extraRules = ''
+    # fix GH-23
+    # see: https://storaged.org/doc/udisks2-api/latest/mount_options.html#id-1.2.8.12
     ACTION=="add", SUBSYSTEMS=="usb", ENV{UDISKS_MOUNT_OPTIONS_DEFAULTS}+="sync"
+
+    # see: https://storaged.org/doc/udisks2-api/latest/udisks.8.html#id-1.2.4.7
+    ACTION=="add", ENV{ID_FS_USAGE}=="filesystem", ENV{UDISKS_AUTO}="1"
   '';
 
   security.polkit = {
