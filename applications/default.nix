@@ -6,6 +6,7 @@
     ./editors.nix
     ./browsers.nix
     ./misc.nix
+    ./nautilus
   ];
 
 
