@@ -7,6 +7,7 @@
     ./yubikey.nix
     ./nix.nix
     ./window.nix
+    ./misc.nix
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
