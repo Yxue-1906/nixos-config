@@ -26,4 +26,9 @@
     enableSSHSupport = true;
   };
 
+  # Allow login/sudo by yubikey (via u2f method)
+  security.pam.services = {
+    login.u2fAuth = true;
+    sudo.u2fAuth = true;
+  };
 }

@@ -4,7 +4,6 @@
     ./lang-and-font.nix
     ./sound.nix
     ./time.nix
-    ./yubikey.nix
     ./nix.nix
     ./window.nix
     ./misc.nix
