@@ -23,6 +23,7 @@ eval=$(git for-each-ref --shell --format="$fmt"\
 	--exclude=refs/remotes/origin/feat-*\
 	--exclude=refs/remotes/origin/bump-*\
 	--exclude=refs/remotes/origin/revert-*\
+	--exclude=refs/remotes/origin/chore-*\
 \
 	--exclude=refs/remotes/origin/common\
 	--exclude=refs/remotes/origin/HEAD\
