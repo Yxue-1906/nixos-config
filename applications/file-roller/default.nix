@@ -2,7 +2,7 @@
   nixpkgs.overlays = [
     (final: prev: {
       file-roller = prev.file-roller.overrideAttrs (finalAttrs: prevAttrs: {
-        patches = prevAttrs.patches ++ [
+        patches = (prevAttrs.patches or []) ++ [
 	  ./restore-extract-button-behavior.patch
 	];
       });
