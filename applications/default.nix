@@ -7,6 +7,7 @@
     ./browsers.nix
     ./misc.nix
     ./nautilus
+    ./file-roller
   ];
 
 
