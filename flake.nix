@@ -29,6 +29,7 @@
 	  ./filesystem
           ./profile
           ./basic-config
+	  ./security
         ];
       };
     };
