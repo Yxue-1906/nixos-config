@@ -6,6 +6,7 @@
     ./time.nix
     ./nix.nix
     ./window.nix
+    ./documentation.nix
     ./misc.nix
   ];
 
