@@ -1,0 +1,15 @@
+{ pkgs, ... }: {
+  nixpkgs.overlays = [
+    (final: prev: {
+      file-roller = prev.file-roller.overrideAttrs (finalAttrs: prevAttrs: {
+<<<<<<< HEAD
+        patches = (prevAttrs.patches or []) ++ [
+=======
+        patches = prevAttrs.patches ++ [
+>>>>>>> 1ee15b4 (feat: add patch for file-roller)
+	  ./restore-extract-button-behavior.patch
+	];
+      });
+    })
+  ];
+}
