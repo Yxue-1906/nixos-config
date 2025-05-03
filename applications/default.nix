@@ -1,6 +1,7 @@
 { ... }: {
   imports = [
     ./nix-ld.nix
+    ./git.nix
     ./aria2.nix
     ./IDEs.nix
     ./editors.nix
