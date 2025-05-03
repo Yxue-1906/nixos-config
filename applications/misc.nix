@@ -1,7 +1,6 @@
 { pkgs, ... }: {
 
   programs = {
-    git.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
