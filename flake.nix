@@ -8,11 +8,11 @@
     ];
   };
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/9df5ff73a8887edc8fb69a9facf3b7f6e8ed17d7";
-    nix-alien.url = "github:thiagokokada/nix-alien/master";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-sing-box.url = "github:NixOS/nixpkgs/9403a4f741ec24789c0718beb3aaca04c4a9b4ae";
+    # nix-alien.url = "github:thiagokokada/nix-alien";
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }@inputs: 
+  outputs = { self, nixpkgs, ... }@inputs: 
     with nixpkgs.lib; 
     {
       nixosConfigurations."unrelated" = nixosSystem rec {
