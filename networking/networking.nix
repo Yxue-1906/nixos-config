@@ -17,11 +17,11 @@
 
   services.sing-box = 
     let
-      unstable-pkgs = (import self.inputs.nixpkgs-unstable { inherit (pkgs) system config; });
+      sing-box-pkgs = (import self.inputs.nixpkgs-sing-box { inherit (pkgs) system config; });
     in
     {
       enable = true;
-      package = unstable-pkgs.sing-box;
+      package = sing-box-pkgs.sing-box;
     };
 
 } 
