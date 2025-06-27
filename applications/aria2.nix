@@ -1,4 +1,4 @@
-{lib, config, options, nixpkgs-24_11, secrets, ...}: {
+{lib, config, options, pkgs, nixpkgs-24_11, secrets, ...}: {
   services.aria2 = {
     enable = true;
     rpcSecretFile = secrets.aria2.secret-file;
@@ -421,5 +421,13 @@
 
   systemd.services.aria2.serviceConfig = {
     UMask = "0002";
+  };
+
+  # Enable local ariang server
+  services.nginx.virtualHosts.localhost = {
+    locations."/ariang/" = {
+      alias = "${pkgs.ariang}/share/ariang/";
+      index = "index.html";
+    };
   };
 }
