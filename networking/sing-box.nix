@@ -18,4 +18,10 @@
       package = sing-box-pkgs.sing-box;
     };
 
+  services.nginx.virtualHosts.localhost = {
+    locations."/sing-box/" = {
+      alias = "${pkgs.metacubexd}/";
+      index = "index.html";
+    };
+  };
 } 
