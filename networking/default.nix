@@ -6,6 +6,6 @@
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
   imports = [
-    ./sing-box.nix
+    ./sing-box
   ];
 }
