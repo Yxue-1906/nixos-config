@@ -8,6 +8,7 @@
     ./browsers.nix
     ./misc.nix
     ./nautilus
+    # ./mutter
     ./file-roller
   ];
 
